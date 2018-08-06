@@ -14,14 +14,19 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         StudentDbHelper dbHelper = new StudentDbHelper(this);
-//        SQLiteDatabase db = dbHelper.getWritableDatabase();
-//
-//        ContentValues values = new ContentValues();
-//        values.put("sid", 9);
-//        values.put("sname", "Shajohn");
-//        values.put("marks", 37);
-//
-//        db.insert("student",null,values);
+
+        // Write
+
+        SQLiteDatabase db1 = dbHelper.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put("sid", 9);
+        values.put("sname", "Shajohn");
+        values.put("marks", 37);
+
+        db1.insert("student",null,values);
+
+        // Read
 
         SQLiteDatabase db = dbHelper.getReadableDatabase();
 
